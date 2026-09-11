@@ -85,12 +85,16 @@ P_sig_tryperposition_k = Q_k × I_k × M_k
 La tension de graphe proposée par les feuilles est calculée de façon transparente :
 
 ```text
-P_sig_reference = graph_P_sig au pas initial
+# F3 — la référence de chaque canal est son premier pas NON NUL (jamais un zéro écrasé)
+P_sig_reference_graph = premier pas tq graph_P_sig !=  ​0.0
+reference_steps.logical = même règle pour le canal logique
+reference_steps.tryperposition = même règle pour P_sig_tryperposition
+reference_graph_never_nonzero = vrai si aucun pas non nul n'existe (R2)
 A = alpha_0 × P_sig_reference
 tension = oscillation_stress / (A × graph_P_sig)
 ```
 
-Si `P_sig_reference`, `A` ou `graph_P_sig` vaut zéro, `graph_tension` est `null` et `graph_tension_unavailable_reason` est renseigné. Cette branche est intentionnelle : une persistance H1 nulle est une sortie valide et ne peut pas être remplacée par une référence logique, un plancher ou une constante.
+Si `P_sig_reference`, `A` ou `graph_P_sig` vaut zéro à un pas donné, `graph_tension` est `null` avec `graph_tension_unavailable_reason` renseigné. Cette branche est intentionnelle : une persistance H1 nulle est une sortie valide et ne peut pas être remplacée par une référence logique, un plancher ou une constante. Si **aucun** pas non nul n'existe sur toute la plage, `reference_graph_never_nonzero=true` et le log le dit explicitement (R2).
 
 La tension active est calculée indépendamment avec `P_sig_tryperposition_reference` et `P_sig_tryperposition`; elle est enregistrée dans `tryperposition_tension` puis dans `active_tension`. La condition candidate d’un scénario s’appuie sur `active_tension`, jamais sur une valeur de graphe substituée.
 
@@ -128,8 +132,8 @@ Le TSP reste un outil de **sélection et d’inspection postérieure**. À parti
   "schema": "ratiss.cosmos.incubator.v1",
   "provenance": {"validated_on_hardware": false, "scenario": "baseline_observational"},
   "noise_profile": {"temperature_millikelvin": 15.0, "temperature_role": "metadata_only", "t1_seconds": 0.0001},
-    "reference": {"graph_P_sig_reference": 0.0, "P_sig_tryperposition_reference": 0.0},
-  "steps": [{
+    "protocol_scope": {"gate_granularity_frozen": true, "mde": {"metric": "purity_global_tr_rho2", "baseline_estimation": "pre_first_gate", "seuil_relatif_pourcent":  ​0.5, "statut": "scelle_avant_run"}},
+    "reference": {"graph_P_sig_reference":  ​0.033454288, "P_sig_tryperposition_reference":​  ​0.187984285, "reference_steps": {"graph": 1, "tryperposition":  ​0}, "reference_graph_never_nonzero": false},
     "step": 0,
     "gate": "initial",
     "density": {"entropy_bits": 0.0, "delta_entropy_bits": null, "purity_global": 1.0},

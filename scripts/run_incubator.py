@@ -200,7 +200,7 @@ def lct_eth_terms(
     # (|ΔS/Δt|≈0). Ce facteur est strictement positif et borné dans (0,1] : le
     # couplage ne peut ni inverser le signe du gradient ni l'amplifier — il
     # amortit seulement, ce qui garantit la stabilité du facteur d'apprentissage.
-    eth_modulation = None if eth_rate is None else float(math.exp(-abs(eth_rate)))
+    eth_modulation = None if delta_entropy is None else float(math.exp(-max(0.0, delta_entropy)))
     lct = {
         "measurement_state": "pre_intervention_density",
         "phase_signed": phase_signed,
@@ -301,6 +301,9 @@ def run_profile(gates: list[Any], config: Any, simulation: Any, profile: Incubat
     reference_graph_psig: float | None = None
     reference_logical_psig: float | None = None
     reference_tryperposition_psig: float | None = None
+    reference_graph_step: int | None = None
+    reference_logical_step: int | None = None
+    reference_tryperposition_step: int | None = None
     records: list[dict[str, Any]] = []
 
     for prefix in range(len(gates) + 1):
@@ -324,10 +327,17 @@ def run_profile(gates: list[Any], config: Any, simulation: Any, profile: Incubat
         )
         graph_psig, logical_psig, logical_coherence, pre_correlation = _step_topology(pre_artifact)
         pre_tryperposition = tryperposition_signal(pre_density, graph_psig, logical_psig, pre_correlation)
-        if reference_graph_psig is None:
+        # F3 — références : premier pas NON NUL par canal, jamais un zéro
+        # écrasé. Le zéro reste publié et `_tension` peut alors travailler.
+        if reference_graph_psig is None and graph_psig != 0.0:
             reference_graph_psig = graph_psig
+            reference_graph_step = prefix
+        if reference_logical_psig is None and logical_psig is not None and logical_psig != 0.0:
             reference_logical_psig = logical_psig
+            reference_logical_step = prefix
+        if reference_tryperposition_psig is None:
             reference_tryperposition_psig = pre_tryperposition["P_sig_tryperposition"]
+            reference_tryperposition_step = prefix
         gradient = frobenius_gradient(pre_correlation, previous_correlation, profile.timestep)
         impacts = impact_by_qubit(pre_correlation, previous_correlation, profile.timestep)
         lct, eth = lct_eth_terms(
@@ -428,6 +438,8 @@ def run_profile(gates: list[Any], config: Any, simulation: Any, profile: Incubat
             "graph_stable_abscissa_A": None if reference_graph_psig is None else float(profile.alpha_0 * reference_graph_psig),
             "logical_stable_abscissa_A": None if reference_logical_psig is None else float(profile.alpha_0 * reference_logical_psig),
             "tryperposition_stable_abscissa_A": None if reference_tryperposition_psig is None else float(profile.alpha_0 * reference_tryperposition_psig),
+            "reference_steps": {"graph": reference_graph_step, "logical": reference_logical_step, "tryperposition": reference_tryperposition_step},
+            "reference_graph_never_nonzero": reference_graph_psig is None,
         },
         "steps": records,
     }
@@ -449,7 +461,7 @@ def default_profiles() -> list[IncubatorProfile]:
     )
     return [
         IncubatorProfile(name="baseline_observational", alpha_0=1.0, apply_local_dephasing=False, **common),
-        IncubatorProfile(name="lct_eth_sensitivity_local_dephasing", alpha_0=0.05, apply_local_dephasing=True, **common),
+        IncubatorProfile(name="lct_eth_sensitivity_local_dephasing", alpha_0=1.0, apply_local_dephasing=True, **common),
     ]
 
 
@@ -491,6 +503,18 @@ def run_incubator(engine_src: str | None = None) -> dict[str, Any]:
             "temperature_role": "metadata_only_not_used_to_derive_aer_parameters",
         },
         "gates": [gate.label() for gate in gates],
+        "protocol_scope": {
+            "gate_granularity_frozen": True,  # R1 — la granularité du programme de portes est un paramètre figé du protocole
+            "ref_rule": "first_nonzero_per_channel",  # F3
+            "ref_steps_logged": True,
+            "mde": {  # R3 — sceau MDE dans l artefact (pas seulement dans le MD)
+                "metric": "purity_global_tr_rho2",
+                "baseline_estimation": "pre_first_gate",
+                "seuil_relatif_pourcent": 0.5,
+                "direction_attendue": "purity_stable_or_protegee",
+                "statut": "scelle_avant_run",
+            },
+        },
         "scenarios": scenarios,
     }
 

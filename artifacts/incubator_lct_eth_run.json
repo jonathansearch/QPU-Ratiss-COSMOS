@@ -32,6 +32,18 @@
     "rz(0.349; 3)",
     "cx(2,4)"
   ],
+  "protocol_scope": {
+    "gate_granularity_frozen": true,
+    "ref_rule": "first_nonzero_per_channel",
+    "ref_steps_logged": true,
+    "mde": {
+      "metric": "purity_global_tr_rho2",
+      "baseline_estimation": "pre_first_gate",
+      "seuil_relatif_pourcent": 0.5,
+      "direction_attendue": "purity_stable_or_protegee",
+      "statut": "scelle_avant_run"
+    }
+  },
   "scenarios": [
     {
       "name": "baseline_observational",
@@ -51,12 +63,18 @@
         "crosstalk_kappa": 0.15
       },
       "reference": {
-        "graph_P_sig_reference": 0.0,
+        "graph_P_sig_reference": 0.033454288,
         "logical_P_sig_reference": 0.18216190760457532,
         "P_sig_tryperposition_reference": 0.18798428652736093,
-        "graph_stable_abscissa_A": 0.0,
+        "graph_stable_abscissa_A": 0.033454288,
         "logical_stable_abscissa_A": 0.18216190760457532,
-        "tryperposition_stable_abscissa_A": 0.18798428652736093
+        "tryperposition_stable_abscissa_A": 0.18798428652736093,
+        "reference_steps": {
+          "graph": 1,
+          "logical": 0,
+          "tryperposition": 0
+        },
+        "reference_graph_never_nonzero": false
       },
       "steps": [
         {
@@ -322,8 +340,8 @@
             "eth_rate_bits_per_step": 0.23531443635960242,
             "gradient_frobenius": 0.4689508401454294,
             "oscillation_stress": 0.03470828309357249,
-            "graph_tension": null,
-            "graph_tension_unavailable_reason": "reference_psig_is_zero",
+            "graph_tension": 31.011983798765385,
+            "graph_tension_unavailable_reason": null,
             "logical_tension": 0.29126859802325955,
             "logical_tension_unavailable_reason": null,
             "tryperposition_tension": 0.29313586129580155,
@@ -515,8 +533,8 @@
             "eth_rate_bits_per_step": 0.9384926797909228,
             "gradient_frobenius": 0.9553223007782882,
             "oscillation_stress": 0.4012718180539762,
-            "graph_tension": null,
-            "graph_tension_unavailable_reason": "reference_psig_is_zero",
+            "graph_tension": 90.02871525026553,
+            "graph_tension_unavailable_reason": null,
             "logical_tension": 3.287149923783489,
             "logical_tension_unavailable_reason": null,
             "tryperposition_tension": 3.989680758671276,
@@ -708,8 +726,8 @@
             "eth_rate_bits_per_step": 0.5975424423256344,
             "gradient_frobenius": 0.9029668987582349,
             "oscillation_stress": 0.5196503442100843,
-            "graph_tension": null,
-            "graph_tension_unavailable_reason": "reference_psig_is_zero",
+            "graph_tension": 620.2989279558308,
+            "graph_tension_unavailable_reason": null,
             "logical_tension": 4.225704268795417,
             "logical_tension_unavailable_reason": null,
             "tryperposition_tension": 6.243871165520882,
@@ -901,8 +919,8 @@
             "eth_rate_bits_per_step": 0.23531443635960403,
             "gradient_frobenius": 0.36803377762784434,
             "oscillation_stress": 0.22336377469749508,
-            "graph_tension": null,
-            "graph_tension_unavailable_reason": "reference_psig_is_zero",
+            "graph_tension": 101.26532018985324,
+            "graph_tension_unavailable_reason": null,
             "logical_tension": 1.878759938945431,
             "logical_tension_unavailable_reason": null,
             "tryperposition_tension": 3.001609745188706,
@@ -1094,8 +1112,8 @@
             "eth_rate_bits_per_step": 0.9384926797909281,
             "gradient_frobenius": 0.4933069879706941,
             "oscillation_stress": 0.37185561326551786,
-            "graph_tension": null,
-            "graph_tension_unavailable_reason": "reference_psig_is_zero",
+            "graph_tension": 99.97528125435497,
+            "graph_tension_unavailable_reason": null,
             "logical_tension": 3.186327204373945,
             "logical_tension_unavailable_reason": null,
             "tryperposition_tension": 7.245221033441871,
@@ -1287,8 +1305,8 @@
             "eth_rate_bits_per_step": 0.45355353601174153,
             "gradient_frobenius": 0.6101532984007978,
             "oscillation_stress": 0.5028731393835058,
-            "graph_tension": null,
-            "graph_tension_unavailable_reason": "reference_psig_is_zero",
+            "graph_tension": 361.6656500239113,
+            "graph_tension_unavailable_reason": null,
             "logical_tension": 4.605825319827352,
             "logical_tension_unavailable_reason": null,
             "tryperposition_tension": 13.73067172763944,
@@ -1481,7 +1499,7 @@
             "gradient_frobenius": 0.4353539569638321,
             "oscillation_stress": 0.3712786928345107,
             "graph_tension": null,
-            "graph_tension_unavailable_reason": "reference_psig_is_zero",
+            "graph_tension_unavailable_reason": "current_psig_is_zero",
             "logical_tension": 4.118689894221547,
             "logical_tension_unavailable_reason": null,
             "tryperposition_tension": 14.56169535580614,
@@ -1673,8 +1691,8 @@
             "eth_rate_bits_per_step": 0.03506774301791937,
             "gradient_frobenius": 0.2650251282785832,
             "oscillation_stress": 0.2273341016464158,
-            "graph_tension": null,
-            "graph_tension_unavailable_reason": "reference_psig_is_zero",
+            "graph_tension": 436.7782572936907,
+            "graph_tension_unavailable_reason": null,
             "logical_tension": 1.8156959581728775,
             "logical_tension_unavailable_reason": null,
             "tryperposition_tension": 6.618038748516573,
@@ -1866,8 +1884,8 @@
             "eth_rate_bits_per_step": 0.020720824559030238,
             "gradient_frobenius": 0.26328657961962393,
             "oscillation_stress": 0.22656314949537945,
-            "graph_tension": null,
-            "graph_tension_unavailable_reason": "reference_psig_is_zero",
+            "graph_tension": 1410.8603555918469,
+            "graph_tension_unavailable_reason": null,
             "logical_tension": 1.911150801452661,
             "logical_tension_unavailable_reason": null,
             "tryperposition_tension": 7.072406260558125,
@@ -2060,7 +2078,7 @@
             "gradient_frobenius": 0.48368422428516583,
             "oscillation_stress": 0.42470624985888195,
             "graph_tension": null,
-            "graph_tension_unavailable_reason": "reference_psig_is_zero",
+            "graph_tension_unavailable_reason": "current_psig_is_zero",
             "logical_tension": 3.9558232244600315,
             "logical_tension_unavailable_reason": null,
             "tryperposition_tension": 17.383366684551852,
@@ -2163,7 +2181,7 @@
       "name": "lct_eth_sensitivity_local_dephasing",
       "profile": {
         "name": "lct_eth_sensitivity_local_dephasing",
-        "alpha_0": 0.05,
+        "alpha_0": 1.0,
         "eta_lct": 0.1,
         "omega_lct": 1.5707963267948966,
         "timestep": 1.0,
@@ -2177,12 +2195,18 @@
         "crosstalk_kappa": 0.15
       },
       "reference": {
-        "graph_P_sig_reference": 0.0,
+        "graph_P_sig_reference": 0.033454288,
         "logical_P_sig_reference": 0.18216190760457532,
         "P_sig_tryperposition_reference": 0.18798428652736093,
-        "graph_stable_abscissa_A": 0.0,
-        "logical_stable_abscissa_A": 0.009108095380228767,
-        "tryperposition_stable_abscissa_A": 0.009399214326368047
+        "graph_stable_abscissa_A": 0.033454288,
+        "logical_stable_abscissa_A": 0.18216190760457532,
+        "tryperposition_stable_abscissa_A": 0.18798428652736093,
+        "reference_steps": {
+          "graph": 1,
+          "logical": 0,
+          "tryperposition": 0
+        },
+        "reference_graph_never_nonzero": false
       },
       "steps": [
         {
@@ -2358,9 +2382,9 @@
           "time_step": 1.0,
           "gate": "h(0)",
           "density": {
-            "entropy_bits": 0.7129803938133698,
-            "purity_global": 0.685354490527087,
-            "density_coherence_proxy": 0.8574039212373261,
+            "entropy_bits": 0.23531443635960242,
+            "purity_global": 0.9259873741076807,
+            "density_coherence_proxy": 0.9529371127280795,
             "trace_real": 1.0,
             "trace_imaginary": 0.0,
             "eigenvalue_sum": 1.0,
@@ -2388,7 +2412,7 @@
             "logical_P_sig": 0.6541568599682558,
             "logical_coherence": 0.996,
             "logical_scope": "algorithmic_topological_logical_qubit_simulation",
-            "P_sig_tryperposition": 0.566713887117374
+            "P_sig_tryperposition": 0.6298579723698924
           },
           "pre_intervention_topology": {
             "graph_P_sig": 0.033454288,
@@ -2404,11 +2428,11 @@
           },
           "tryperposition": {
             "state": "Psi = Q x I x M",
-            "P_sig_tryperposition": 0.566713887117374,
+            "P_sig_tryperposition": 0.6298579723698924,
             "quantum_layer_Q": {
-              "density_coherence_proxy": 0.8574039212373261,
-              "purity_global": 0.685354490527087,
-              "entropy_bits": 0.7129803938133698
+              "density_coherence_proxy": 0.9529371127280795,
+              "purity_global": 0.9259873741076807,
+              "entropy_bits": 0.23531443635960242
             },
             "information_layer_I": {
               "graph_P_sig": 0.033454288,
@@ -2448,21 +2472,21 @@
             "eth_rate_bits_per_step": 0.23531443635960242,
             "gradient_frobenius": 0.4689508401454294,
             "oscillation_stress": 0.03470828309357249,
-            "graph_tension": null,
-            "graph_tension_unavailable_reason": "reference_psig_is_zero",
-            "logical_tension": 5.825371960465191,
+            "graph_tension": 31.011983798765385,
+            "graph_tension_unavailable_reason": null,
+            "logical_tension": 0.29126859802325955,
             "logical_tension_unavailable_reason": null,
-            "tryperposition_tension": 5.862717225916032,
+            "tryperposition_tension": 0.29313586129580155,
             "tryperposition_tension_unavailable_reason": null,
-            "active_tension": 5.862717225916032,
+            "active_tension": 0.29313586129580155,
             "active_tension_channel": "tryperposition",
             "crosstalk_proxy": 0.0885109986,
             "crosstalk_scope": "correlation_statistic_not_electromagnetic_measurement",
             "eth_pressure_indicator": 0.00022798724620275003,
             "temperature_role": "profile_metadata_only_not_converted_to_aer_t1_t2",
-            "collapse_condition_met": true,
+            "collapse_condition_met": false,
             "collapse_threshold": 1.0,
-            "collapse_observed": true
+            "collapse_observed": false
           },
           "impact": {
             "per_qubit": [
@@ -2483,16 +2507,10 @@
           },
           "intervention": {
             "mode": "lct_eth_local_dephasing_experimental",
-            "applied": true,
-            "channel": "local_z_dephasing",
-            "strength": 0.8294306272218761,
-            "affected_qubits": [
-              0,
-              1,
-              2,
-              3,
-              4
-            ],
+            "applied": false,
+            "channel": null,
+            "strength": null,
+            "affected_qubits": [],
             "baseline_density_overwritten": false
           },
           "tsp_inspection": {
@@ -2557,9 +2575,9 @@
           "time_step": 2.0,
           "gate": "cx(0,1)",
           "density": {
-            "entropy_bits": 1.3470770183915064,
-            "purity_global": 0.4840304402452059,
-            "density_coherence_proxy": 0.7305845963216987,
+            "entropy_bits": 1.4369754781159847,
+            "purity_global": 0.43025863467362424,
+            "density_coherence_proxy": 0.712604904376803,
             "trace_real": 1.0000000000000016,
             "trace_imaginary": 0.0,
             "eigenvalue_sum": 1.0000000000000016,
@@ -2567,17 +2585,17 @@
             "rho_dimension": 32
           },
           "pre_intervention_density": {
-            "entropy_bits": 1.3374008921067766,
-            "purity_global": 0.4896587429980781,
-            "density_coherence_proxy": 0.7325198215786447,
+            "entropy_bits": 1.1738071161505252,
+            "purity_global": 0.5799618435295968,
+            "density_coherence_proxy": 0.7652385767698949,
             "trace_real": 1.0000000000000016,
             "trace_imaginary": 0.0,
-            "eigenvalue_sum": 1.0000000000000016,
+            "eigenvalue_sum": 1.0000000000000018,
             "negative_eigenvalues": [],
             "rho_dimension": 32
           },
           "topology": {
-            "graph_P_sig": 0.144277296,
+            "graph_P_sig": 0.149934717,
             "graph_betti": [
               1,
               0,
@@ -2587,10 +2605,10 @@
             "logical_P_sig": 0.6701338902072207,
             "logical_coherence": 0.956,
             "logical_scope": "algorithmic_topological_logical_qubit_simulation",
-            "P_sig_tryperposition": 0.5110997689668367
+            "P_sig_tryperposition": 0.4987400171439425
           },
           "pre_intervention_topology": {
-            "graph_P_sig": 0.143664657,
+            "graph_P_sig": 0.133231162,
             "graph_betti": [
               1,
               0,
@@ -2599,21 +2617,21 @@
             "graph_finite_h1": 1,
             "logical_P_sig": 0.6701338902072207,
             "logical_coherence": 0.956,
-            "P_sig_tryperposition": 0.5124321360737931
+            "P_sig_tryperposition": 0.5350310233486204
           },
           "tryperposition": {
             "state": "Psi = Q x I x M",
-            "P_sig_tryperposition": 0.5110997689668367,
+            "P_sig_tryperposition": 0.4987400171439425,
             "quantum_layer_Q": {
-              "density_coherence_proxy": 0.7305845963216987,
-              "purity_global": 0.4840304402452059,
-              "entropy_bits": 1.3470770183915064
+              "density_coherence_proxy": 0.712604904376803,
+              "purity_global": 0.43025863467362424,
+              "entropy_bits": 1.4369754781159847
             },
             "information_layer_I": {
-              "graph_P_sig": 0.144277296,
+              "graph_P_sig": 0.149934717,
               "logical_P_sig": 0.6701338902072207,
-              "correlation_amplitude": 0.13968472550000002,
-              "information_amplitude": 0.6995764371984989
+              "correlation_amplitude": 0.13518980249999998,
+              "information_amplitude": 0.6998829422597199
             },
             "material_layer_M": {
               "trace_integrity_amplitude": 0.9999999999999984,
@@ -2624,40 +2642,40 @@
             "measurement_state": "pre_intervention_density",
             "phase_signed": -1.0,
             "phase_amplitude": 1.0,
-            "graph_P_sig": 0.143664657,
+            "graph_P_sig": 0.133231162,
             "logical_P_sig": 0.6701338902072207,
-            "P_sig_tryperposition": 0.5124321360737931,
+            "P_sig_tryperposition": 0.5350310233486204,
             "active_P_sig_channel": "tryperposition",
-            "density_coherence_proxy": 0.7325198215786447,
+            "density_coherence_proxy": 0.7652385767698949,
             "logical_coherence": 0.956,
-            "lct_factor_graph": -0.10523720891279718,
+            "lct_factor_graph": -0.10195362479027929,
             "lct_factor_logical": -0.640647999038103,
-            "candidate_delta_w_graph": -0.010523720891279719,
+            "candidate_delta_w_graph": -0.01019536247902793,
             "candidate_delta_w_logical": -0.0640647999038103,
-            "lct_factor_tryperposition": -0.3753666968879387,
-            "candidate_delta_w_tryperposition": -0.03753666968879388,
-            "eth_modulation": 0.535571703323997,
-            "lct_factor_coupled": -0.20103578122337581,
-            "candidate_delta_w_coupled": -0.020103578122337585,
+            "lct_factor_tryperposition": -0.4094263788350387,
+            "candidate_delta_w_tryperposition": -0.04094263788350387,
+            "eth_modulation": 0.39121708056802684,
+            "lct_factor_coupled": -0.1601745926353828,
+            "candidate_delta_w_coupled": -0.016017459263538283,
             "coupling_scope": "eth_amplitude_modulation_exp_minus_abs_rate_stabilized"
           },
           "eth": {
             "measurement_state": "pre_intervention_density",
-            "delta_entropy_bits": 0.6244204982934068,
-            "eth_rate_bits_per_step": 0.6244204982934068,
-            "gradient_frobenius": 0.9004299452677861,
-            "oscillation_stress": 0.4595265501101337,
-            "graph_tension": null,
-            "graph_tension_unavailable_reason": "reference_psig_is_zero",
-            "logical_tension": 75.28725398641524,
+            "delta_entropy_bits": 0.9384926797909228,
+            "eth_rate_bits_per_step": 0.9384926797909228,
+            "gradient_frobenius": 0.9553223007782882,
+            "oscillation_stress": 0.4012718180539762,
+            "graph_tension": 90.02871525026553,
+            "graph_tension_unavailable_reason": null,
+            "logical_tension": 3.287149923783489,
             "logical_tension_unavailable_reason": null,
-            "tryperposition_tension": 95.40754002524415,
+            "tryperposition_tension": 3.989680758671276,
             "tryperposition_tension_unavailable_reason": null,
-            "active_tension": 95.40754002524415,
+            "active_tension": 3.989680758671276,
             "active_tension_channel": "tryperposition",
-            "crosstalk_proxy": 0.1401685318,
+            "crosstalk_proxy": 0.1483482206,
             "crosstalk_scope": "correlation_statistic_not_electromagnetic_measurement",
-            "eth_pressure_indicator": 0.00022973068794824997,
+            "eth_pressure_indicator": 0.00023000675244524998,
             "temperature_role": "profile_metadata_only_not_converted_to_aer_t1_t2",
             "collapse_condition_met": true,
             "collapse_threshold": 1.0,
@@ -2665,8 +2683,8 @@
           },
           "impact": {
             "per_qubit": [
-              0.641264458,
-              0.948275067,
+              0.7230613459999999,
+              1.030071955,
               0.7715668250000001,
               0.5720125450000001,
               0.6681820610000001
@@ -2684,7 +2702,7 @@
             "mode": "lct_eth_local_dephasing_experimental",
             "applied": true,
             "channel": "local_z_dephasing",
-            "strength": 0.989518648109621,
+            "strength": 0.7493533792580838,
             "affected_qubits": [
               0,
               1,
@@ -2716,13 +2734,13 @@
           "correlation_matrix": [
             [
               1.0,
-              0.331289082,
+              0.286339852,
               -0.20425338,
               -0.052463963,
               0.129537161
             ],
             [
-              0.331289082,
+              0.286339852,
               1.0,
               0.127991428,
               0.098500979,
@@ -2756,19 +2774,19 @@
           "time_step": 3.0,
           "gate": "cx(1,2)",
           "density": {
-            "entropy_bits": 1.8439677094690996,
-            "purity_global": 0.3864325362369352,
-            "density_coherence_proxy": 0.63120645810618,
+            "entropy_bits": 1.883251178061602,
+            "purity_global": 0.3651053601565519,
+            "density_coherence_proxy": 0.6233497643876796,
             "trace_real": 1.000000000000003,
             "trace_imaginary": 0.0,
-            "eigenvalue_sum": 1.0000000000000033,
+            "eigenvalue_sum": 1.000000000000003,
             "negative_eigenvalues": [],
             "rho_dimension": 32
           },
           "pre_intervention_density": {
-            "entropy_bits": 1.840095332107912,
-            "purity_global": 0.3885073736737418,
-            "density_coherence_proxy": 0.6319809335784176,
+            "entropy_bits": 1.8773740086312969,
+            "purity_global": 0.36832824980655215,
+            "density_coherence_proxy": 0.6245251982737406,
             "trace_real": 1.000000000000003,
             "trace_imaginary": 0.0,
             "eigenvalue_sum": 1.000000000000003,
@@ -2786,7 +2804,7 @@
             "logical_P_sig": 0.6750789302969336,
             "logical_coherence": 0.9159999999999999,
             "logical_scope": "algorithmic_topological_logical_qubit_simulation",
-            "P_sig_tryperposition": 0.4327690040451145
+            "P_sig_tryperposition": 0.4273822823600347
           },
           "pre_intervention_topology": {
             "graph_P_sig": 0.025041388,
@@ -2798,15 +2816,15 @@
             "graph_finite_h1": 1,
             "logical_P_sig": 0.6750789302969336,
             "logical_coherence": 0.9159999999999999,
-            "P_sig_tryperposition": 0.43330000143031744
+            "P_sig_tryperposition": 0.4281881856356725
           },
           "tryperposition": {
             "state": "Psi = Q x I x M",
-            "P_sig_tryperposition": 0.4327690040451145,
+            "P_sig_tryperposition": 0.4273822823600347,
             "quantum_layer_Q": {
-              "density_coherence_proxy": 0.63120645810618,
-              "purity_global": 0.3864325362369352,
-              "entropy_bits": 1.8439677094690996
+              "density_coherence_proxy": 0.6233497643876796,
+              "purity_global": 0.3651053601565519,
+              "entropy_bits": 1.883251178061602
             },
             "information_layer_I": {
               "graph_P_sig": 0.025041388,
@@ -2825,34 +2843,34 @@
             "phase_amplitude": 1.8369701987210297e-16,
             "graph_P_sig": 0.025041388,
             "logical_P_sig": 0.6750789302969336,
-            "P_sig_tryperposition": 0.43330000143031744,
+            "P_sig_tryperposition": 0.4281881856356725,
             "active_P_sig_channel": "tryperposition",
-            "density_coherence_proxy": 0.6319809335784176,
+            "density_coherence_proxy": 0.6245251982737406,
             "logical_coherence": 0.9159999999999999,
-            "lct_factor_graph": -2.9071302105267835e-18,
+            "lct_factor_graph": -2.8728336167621746e-18,
             "lct_factor_logical": -1.1359314870937834e-16,
-            "candidate_delta_w_graph": -2.907130210526784e-19,
+            "candidate_delta_w_graph": -2.872833616762175e-19,
             "candidate_delta_w_logical": -1.1359314870937834e-17,
-            "lct_factor_tryperposition": -5.030310318179545e-17,
-            "candidate_delta_w_tryperposition": -5.030310318179544e-18,
-            "eth_modulation": 0.6107800833102262,
-            "lct_factor_coupled": -3.072413355213993e-17,
-            "candidate_delta_w_coupled": -3.072413355213992e-18,
+            "lct_factor_tryperposition": -4.9123212099687226e-17,
+            "candidate_delta_w_tryperposition": -4.912321209968722e-18,
+            "eth_modulation": 0.6437798040546221,
+            "lct_factor_coupled": -3.1624531860070284e-17,
+            "candidate_delta_w_coupled": -3.1624531860070283e-18,
             "coupling_scope": "eth_amplitude_modulation_exp_minus_abs_rate_stabilized"
           },
           "eth": {
             "measurement_state": "pre_intervention_density",
-            "delta_entropy_bits": 0.4930183137164057,
-            "eth_rate_bits_per_step": 0.4930183137164057,
-            "gradient_frobenius": 0.8860945467299628,
-            "oscillation_stress": 0.5418402815532803,
-            "graph_tension": null,
-            "graph_tension_unavailable_reason": "reference_psig_is_zero",
-            "logical_tension": 88.12297793222841,
+            "delta_entropy_bits": 0.4403985305153122,
+            "eth_rate_bits_per_step": 0.4403985305153122,
+            "gradient_frobenius": 0.8839295117262614,
+            "oscillation_stress": 0.5583533017197674,
+            "graph_tension": 666.4980757471594,
+            "graph_tension_unavailable_reason": null,
+            "logical_tension": 4.540429842608482,
             "logical_tension_unavailable_reason": null,
-            "tryperposition_tension": 133.04269849099452,
+            "tryperposition_tension": 6.936699161017431,
             "tryperposition_tension_unavailable_reason": null,
-            "active_tension": 133.04269849099452,
+            "active_tension": 6.936699161017431,
             "active_tension_channel": "tryperposition",
             "crosstalk_proxy": 0.1171274011,
             "crosstalk_scope": "correlation_statistic_not_electromagnetic_measurement",
@@ -2864,8 +2882,8 @@
           },
           "impact": {
             "per_qubit": [
-              0.6544981880000001,
-              0.46582170600000006,
+              0.611870494,
+              0.42319401199999995,
               1.0010867780000001,
               0.395173631,
               0.48311038500000003
@@ -2883,7 +2901,7 @@
             "mode": "lct_eth_local_dephasing_experimental",
             "applied": true,
             "channel": "local_z_dephasing",
-            "strength": 0.992483616077077,
+            "strength": 0.8558392144754153,
             "affected_qubits": [
               0,
               1,
@@ -2955,22 +2973,22 @@
           "time_step": 4.0,
           "gate": "h(3)",
           "density": {
-            "entropy_bits": 2.1484036047184,
-            "purity_global": 0.34453792233174313,
-            "density_coherence_proxy": 0.5703192790563201,
+            "entropy_bits": 2.776215974854765,
+            "purity_global": 0.20889851261525294,
+            "density_coherence_proxy": 0.444756805029047,
             "trace_real": 1.000000000000003,
             "trace_imaginary": 0.0,
-            "eigenvalue_sum": 1.0000000000000029,
+            "eigenvalue_sum": 1.0000000000000036,
             "negative_eigenvalues": [],
             "rho_dimension": 32
           },
           "pre_intervention_density": {
-            "entropy_bits": 2.079282145828704,
-            "purity_global": 0.3578316494998108,
-            "density_coherence_proxy": 0.5841435708342593,
+            "entropy_bits": 2.1185656144212057,
+            "purity_global": 0.3380829537240045,
+            "density_coherence_proxy": 0.5762868771157589,
             "trace_real": 1.000000000000003,
             "trace_imaginary": 0.0,
-            "eigenvalue_sum": 1.000000000000003,
+            "eigenvalue_sum": 1.0000000000000029,
             "negative_eigenvalues": [],
             "rho_dimension": 32
           },
@@ -2985,7 +3003,7 @@
             "logical_P_sig": 0.6526553217895099,
             "logical_coherence": 0.9119999999999999,
             "logical_scope": "algorithmic_topological_logical_qubit_simulation",
-            "P_sig_tryperposition": 0.37711130568568857
+            "P_sig_tryperposition": 0.29408583159703466
           },
           "pre_intervention_topology": {
             "graph_P_sig": 0.065932601,
@@ -2997,15 +3015,15 @@
             "graph_finite_h1": 1,
             "logical_P_sig": 0.6526553217895099,
             "logical_coherence": 0.9119999999999999,
-            "P_sig_tryperposition": 0.38625232005080834
+            "P_sig_tryperposition": 0.38105725101604115
           },
           "tryperposition": {
             "state": "Psi = Q x I x M",
-            "P_sig_tryperposition": 0.37711130568568857,
+            "P_sig_tryperposition": 0.29408583159703466,
             "quantum_layer_Q": {
-              "density_coherence_proxy": 0.5703192790563201,
-              "purity_global": 0.34453792233174313,
-              "entropy_bits": 2.1484036047184
+              "density_coherence_proxy": 0.444756805029047,
+              "purity_global": 0.20889851261525294,
+              "entropy_bits": 2.776215974854765
             },
             "information_layer_I": {
               "graph_P_sig": 0.065932601,
@@ -3024,34 +3042,34 @@
             "phase_amplitude": 1.0,
             "graph_P_sig": 0.065932601,
             "logical_P_sig": 0.6526553217895099,
-            "P_sig_tryperposition": 0.38625232005080834,
+            "P_sig_tryperposition": 0.38105725101604115,
             "active_P_sig_channel": "tryperposition",
-            "density_coherence_proxy": 0.5841435708342593,
+            "density_coherence_proxy": 0.5762868771157589,
             "logical_coherence": 0.9119999999999999,
-            "lct_factor_graph": 0.03851410498253045,
+            "lct_factor_graph": 0.03799609273040936,
             "lct_factor_logical": 0.595221653472033,
-            "candidate_delta_w_graph": 0.003851410498253045,
+            "candidate_delta_w_graph": 0.003799609273040936,
             "candidate_delta_w_logical": 0.0595221653472033,
-            "lct_factor_tryperposition": 0.22562680947749633,
-            "candidate_delta_w_tryperposition": 0.022562680947749634,
-            "eth_modulation": 0.7903223044866317,
-            "lct_factor_coupled": 0.17831790002022108,
-            "candidate_delta_w_coupled": 0.01783179000202211,
+            "lct_factor_tryperposition": 0.21959829319035018,
+            "candidate_delta_w_tryperposition": 0.021959829319035024,
+            "eth_modulation": 0.7903223044866321,
+            "lct_factor_coupled": 0.17355342913552865,
+            "candidate_delta_w_coupled": 0.017355342913552868,
             "coupling_scope": "eth_amplitude_modulation_exp_minus_abs_rate_stabilized"
           },
           "eth": {
             "measurement_state": "pre_intervention_density",
-            "delta_entropy_bits": 0.23531443635960425,
-            "eth_rate_bits_per_step": 0.23531443635960425,
+            "delta_entropy_bits": 0.2353144363596038,
+            "eth_rate_bits_per_step": 0.2353144363596038,
             "gradient_frobenius": 0.36803377762784434,
-            "oscillation_stress": 0.2363396439076262,
-            "graph_tension": null,
-            "graph_tension_unavailable_reason": "reference_psig_is_zero",
-            "logical_tension": 39.75805437203298,
+            "oscillation_stress": 0.2436078310172193,
+            "graph_tension": 110.44326700748142,
+            "graph_tension_unavailable_reason": null,
+            "logical_tension": 2.0490369772286647,
             "logical_tension_unavailable_reason": null,
-            "tryperposition_tension": 65.09894089688315,
+            "tryperposition_tension": 3.4007872717278276,
             "tryperposition_tension_unavailable_reason": null,
-            "active_tension": 65.09894089688315,
+            "active_tension": 3.4007872717278276,
             "active_tension_channel": "tryperposition",
             "crosstalk_proxy": 0.0831680411,
             "crosstalk_scope": "correlation_statistic_not_electromagnetic_measurement",
@@ -3082,7 +3100,7 @@
             "mode": "lct_eth_local_dephasing_experimental",
             "applied": true,
             "channel": "local_z_dephasing",
-            "strength": 0.984638766987254,
+            "strength": 0.7059504402661643,
             "affected_qubits": [
               0,
               1,
@@ -3154,9 +3172,9 @@
           "time_step": 5.0,
           "gate": "cx(3,4)",
           "density": {
-            "entropy_bits": 3.0597927515545864,
-            "purity_global": 0.21459743945248622,
-            "density_coherence_proxy": 0.3880414496890827,
+            "entropy_bits": 3.3233252561995568,
+            "purity_global": 0.15638570093454165,
+            "density_coherence_proxy": 0.3353349487600886,
             "trace_real": 1.0000000000000049,
             "trace_imaginary": 0.0,
             "eigenvalue_sum": 1.0000000000000049,
@@ -3164,17 +3182,17 @@
             "rho_dimension": 32
           },
           "pre_intervention_density": {
-            "entropy_bits": 3.0430367239513383,
-            "purity_global": 0.21826173202283022,
-            "density_coherence_proxy": 0.3913926552097323,
+            "entropy_bits": 3.292815124312951,
+            "purity_global": 0.16315637155537055,
+            "density_coherence_proxy": 0.3414369751374098,
             "trace_real": 1.0000000000000049,
             "trace_imaginary": 0.0,
-            "eigenvalue_sum": 1.000000000000005,
+            "eigenvalue_sum": 1.0000000000000047,
             "negative_eigenvalues": [],
             "rho_dimension": 32
           },
           "topology": {
-            "graph_P_sig": 0.112522223,
+            "graph_P_sig": 0.12181689,
             "graph_betti": [
               1,
               0,
@@ -3184,10 +3202,10 @@
             "logical_P_sig": 0.640658222691231,
             "logical_coherence": 0.8719999999999999,
             "logical_scope": "algorithmic_topological_logical_qubit_simulation",
-            "P_sig_tryperposition": 0.25775149721270446
+            "P_sig_tryperposition": 0.2225350232685035
           },
           "pre_intervention_topology": {
-            "graph_P_sig": 0.111936812,
+            "graph_P_sig": 0.120632053,
             "graph_betti": [
               1,
               0,
@@ -3196,21 +3214,21 @@
             "graph_finite_h1": 1,
             "logical_P_sig": 0.640658222691231,
             "logical_coherence": 0.8719999999999999,
-            "P_sig_tryperposition": 0.25999539500323426
+            "P_sig_tryperposition": 0.22660761579579283
           },
           "tryperposition": {
             "state": "Psi = Q x I x M",
-            "P_sig_tryperposition": 0.25775149721270446,
+            "P_sig_tryperposition": 0.2225350232685035,
             "quantum_layer_Q": {
-              "density_coherence_proxy": 0.3880414496890827,
-              "purity_global": 0.21459743945248622,
-              "entropy_bits": 3.0597927515545864
+              "density_coherence_proxy": 0.3353349487600886,
+              "purity_global": 0.15638570093454165,
+              "entropy_bits": 3.3233252561995568
             },
             "information_layer_I": {
-              "graph_P_sig": 0.112522223,
+              "graph_P_sig": 0.12181689,
               "logical_P_sig": 0.640658222691231,
-              "correlation_amplitude": 0.1345608164,
-              "information_amplitude": 0.6642370226665953
+              "correlation_amplitude": 0.12292016850000001,
+              "information_amplitude": 0.6636201329188465
             },
             "material_layer_M": {
               "trace_integrity_amplitude": 0.9999999999999951,
@@ -3221,40 +3239,40 @@
             "measurement_state": "pre_intervention_density",
             "phase_signed": 3.061616997868383e-16,
             "phase_amplitude": 3.061616997868383e-16,
-            "graph_P_sig": 0.111936812,
+            "graph_P_sig": 0.120632053,
             "logical_P_sig": 0.640658222691231,
-            "P_sig_tryperposition": 0.25999539500323426,
+            "P_sig_tryperposition": 0.22660761579579283,
             "active_P_sig_channel": "tryperposition",
-            "density_coherence_proxy": 0.3913926552097323,
+            "density_coherence_proxy": 0.3414369751374098,
             "logical_coherence": 0.8719999999999999,
-            "lct_factor_graph": 1.3413325564853877e-17,
+            "lct_factor_graph": 1.2610262574125097e-17,
             "lct_factor_logical": 1.7103844910504208e-16,
-            "candidate_delta_w_graph": 1.3413325564853875e-18,
+            "candidate_delta_w_graph": 1.2610262574125097e-18,
             "candidate_delta_w_logical": 1.710384491050421e-17,
-            "lct_factor_tryperposition": 3.1155102742618434e-17,
-            "candidate_delta_w_tryperposition": 3.1155102742618433e-18,
-            "eth_modulation": 0.4087575364130256,
-            "lct_factor_coupled": 1.2734883043767409e-17,
-            "candidate_delta_w_coupled": 1.2734883043767407e-18,
+            "lct_factor_tryperposition": 2.368841004870741e-17,
+            "candidate_delta_w_tryperposition": 2.3688410048707412e-18,
+            "eth_modulation": 0.5965458654468655,
+            "lct_factor_coupled": 1.413122307356639e-17,
+            "candidate_delta_w_coupled": 1.4131223073566388e-18,
             "coupling_scope": "eth_amplitude_modulation_exp_minus_abs_rate_stabilized"
           },
           "eth": {
             "measurement_state": "pre_intervention_density",
-            "delta_entropy_bits": 0.8946331192329384,
-            "eth_rate_bits_per_step": 0.8946331192329384,
-            "gradient_frobenius": 0.4849560757917222,
-            "oscillation_stress": 0.379108722734426,
-            "graph_tension": null,
-            "graph_tension_unavailable_reason": "reference_psig_is_zero",
-            "logical_tension": 64.9695415947174,
+            "delta_entropy_bits": 0.5165991494581861,
+            "eth_rate_bits_per_step": 0.5165991494581861,
+            "gradient_frobenius": 0.40512926446732067,
+            "oscillation_stress": 0.3390298436659365,
+            "graph_tension": 84.00853650972985,
+            "graph_tension_unavailable_reason": null,
+            "logical_tension": 2.90505232523161,
             "logical_tension_unavailable_reason": null,
-            "tryperposition_tension": 155.13384919672396,
+            "tryperposition_tension": 7.958695327576782,
             "tryperposition_tension_unavailable_reason": null,
-            "active_tension": 155.13384919672396,
+            "active_tension": 7.958695327576782,
             "active_tension_channel": "tryperposition",
-            "crosstalk_proxy": 0.13527299439999999,
+            "crosstalk_proxy": 0.12444549899999999,
             "crosstalk_scope": "correlation_statistic_not_electromagnetic_measurement",
-            "eth_pressure_indicator": 0.000229565463561,
+            "eth_pressure_indicator": 0.00022920003559125,
             "temperature_role": "profile_metadata_only_not_converted_to_aer_t1_t2",
             "collapse_condition_met": true,
             "collapse_threshold": 1.0,
@@ -3265,8 +3283,8 @@
               0.271477881,
               0.405778194,
               0.262587521,
-              0.38307299400000006,
-              0.46382016800000003
+              0.27479804,
+              0.355545214
             ],
             "impact_threshold": 0.0,
             "eligible_qubits": [
@@ -3281,7 +3299,7 @@
             "mode": "lct_eth_local_dephasing_experimental",
             "applied": true,
             "channel": "local_z_dephasing",
-            "strength": 0.9935539535363949,
+            "strength": 0.8743512650201583,
             "affected_qubits": [
               0,
               1,
@@ -3337,13 +3355,13 @@
               -0.03996249,
               0.08524998,
               1.0,
-              0.237560863
+              0.121154384
             ],
             [
               -0.03001437,
               0.063832234,
               -0.056067681,
-              0.237560863,
+              0.121154384,
               1.0
             ]
           ]
@@ -3353,9 +3371,9 @@
           "time_step": 6.0,
           "gate": "cx(4,0)",
           "density": {
-            "entropy_bits": 3.469283827307862,
-            "purity_global": 0.15828977230597063,
-            "density_coherence_proxy": 0.3061432345384276,
+            "entropy_bits": 3.57812270268174,
+            "purity_global": 0.1351013163618563,
+            "density_coherence_proxy": 0.28437545946365206,
             "trace_real": 1.0000000000000067,
             "trace_imaginary": 0.0,
             "eigenvalue_sum": 1.0000000000000067,
@@ -3363,12 +3381,12 @@
             "rho_dimension": 32
           },
           "pre_intervention_density": {
-            "entropy_bits": 3.464488941269447,
-            "purity_global": 0.1593072856942563,
-            "density_coherence_proxy": 0.30710221174611063,
+            "entropy_bits": 3.575129561287883,
+            "purity_global": 0.13572407245834248,
+            "density_coherence_proxy": 0.2849740877424234,
             "trace_real": 1.0000000000000067,
             "trace_imaginary": 0.0,
-            "eigenvalue_sum": 1.0000000000000067,
+            "eigenvalue_sum": 1.0000000000000064,
             "negative_eigenvalues": [],
             "rho_dimension": 32
           },
@@ -3383,7 +3401,7 @@
             "logical_P_sig": 0.5993678037165697,
             "logical_coherence": 0.8319999999999999,
             "logical_scope": "algorithmic_topological_logical_qubit_simulation",
-            "P_sig_tryperposition": 0.1862386618329328
+            "P_sig_tryperposition": 0.1729964900530511
           },
           "pre_intervention_topology": {
             "graph_P_sig": 0.041562282,
@@ -3395,15 +3413,15 @@
             "graph_finite_h1": 1,
             "logical_P_sig": 0.5993678037165697,
             "logical_coherence": 0.8319999999999999,
-            "P_sig_tryperposition": 0.18682204441904954
+            "P_sig_tryperposition": 0.17336065857613414
           },
           "tryperposition": {
             "state": "Psi = Q x I x M",
-            "P_sig_tryperposition": 0.1862386618329328,
+            "P_sig_tryperposition": 0.1729964900530511,
             "quantum_layer_Q": {
-              "density_coherence_proxy": 0.3061432345384276,
-              "purity_global": 0.15828977230597063,
-              "entropy_bits": 3.469283827307862
+              "density_coherence_proxy": 0.28437545946365206,
+              "purity_global": 0.1351013163618563,
+              "entropy_bits": 3.57812270268174
             },
             "information_layer_I": {
               "graph_P_sig": 0.041562282,
@@ -3422,34 +3440,34 @@
             "phase_amplitude": 1.0,
             "graph_P_sig": 0.041562282,
             "logical_P_sig": 0.5993678037165697,
-            "P_sig_tryperposition": 0.18682204441904954,
+            "P_sig_tryperposition": 0.17336065857613414,
             "active_P_sig_channel": "tryperposition",
-            "density_coherence_proxy": 0.30710221174611063,
+            "density_coherence_proxy": 0.2849740877424234,
             "logical_coherence": 0.8319999999999999,
-            "lct_factor_graph": -0.012763868727415563,
+            "lct_factor_graph": -0.011844173397443343,
             "lct_factor_logical": -0.4986740126921859,
-            "candidate_delta_w_graph": -0.0012763868727415561,
+            "candidate_delta_w_graph": -0.0011844173397443343,
             "candidate_delta_w_logical": -0.0498674012692186,
-            "lct_factor_tryperposition": -0.05737346304402024,
-            "candidate_delta_w_tryperposition": -0.0057373463044020235,
-            "eth_modulation": 0.6671794760578899,
-            "lct_factor_coupled": -0.03827839701333613,
-            "candidate_delta_w_coupled": -0.0038278397013336127,
+            "lct_factor_tryperposition": -0.04940329552815956,
+            "candidate_delta_w_tryperposition": -0.004940329552815956,
+            "eth_modulation": 0.7773968557931584,
+            "lct_factor_coupled": -0.038405966609411445,
+            "candidate_delta_w_coupled": -0.003840596660941144,
             "coupling_scope": "eth_amplitude_modulation_exp_minus_abs_rate_stabilized"
           },
           "eth": {
             "measurement_state": "pre_intervention_density",
-            "delta_entropy_bits": 0.40469618971486065,
-            "eth_rate_bits_per_step": 0.40469618971486065,
-            "gradient_frobenius": 0.6094624026163065,
-            "oscillation_stress": 0.5123706015228027,
-            "graph_tension": null,
-            "graph_tension_unavailable_reason": "reference_psig_is_zero",
-            "logical_tension": 93.85625537772756,
+            "delta_entropy_bits": 0.2518043050883261,
+            "eth_rate_bits_per_step": 0.2518043050883261,
+            "gradient_frobenius": 0.6295365141580898,
+            "oscillation_stress": 0.5440932546953248,
+            "graph_tension": 391.3110986087887,
+            "graph_tension_unavailable_reason": null,
+            "logical_tension": 4.983361195022691,
             "logical_tension_unavailable_reason": null,
-            "tryperposition_tension": 291.7860534811191,
+            "tryperposition_tension": 16.69556978793043,
             "tryperposition_tension_unavailable_reason": null,
-            "active_tension": 291.7860534811191,
+            "active_tension": 16.69556978793043,
             "active_tension_channel": "tryperposition",
             "crosstalk_proxy": 0.0954270798,
             "crosstalk_scope": "correlation_statistic_not_electromagnetic_measurement",
@@ -3464,8 +3482,8 @@
               0.731620596,
               0.275532202,
               0.467684451,
-              0.33518777,
-              0.171037253
+              0.44201946300000006,
+              0.277868946
             ],
             "impact_threshold": 0.0,
             "eligible_qubits": [
@@ -3480,7 +3498,7 @@
             "mode": "lct_eth_local_dephasing_experimental",
             "applied": true,
             "channel": "local_z_dephasing",
-            "strength": 0.9965728314013997,
+            "strength": 0.9401038711046016,
             "affected_qubits": [
               0,
               1,
@@ -3552,9 +3570,9 @@
           "time_step": 7.0,
           "gate": "cz(2,3)",
           "density": {
-            "entropy_bits": 3.682425191244706,
-            "purity_global": 0.13758522774913515,
-            "density_coherence_proxy": 0.2635149617510588,
+            "entropy_bits": 3.7427470256533297,
+            "purity_global": 0.12501132454349778,
+            "density_coherence_proxy": 0.2514505948693341,
             "trace_real": 1.000000000000008,
             "trace_imaginary": 0.0,
             "eigenvalue_sum": 1.0000000000000082,
@@ -3562,9 +3580,9 @@
             "rho_dimension": 32
           },
           "pre_intervention_density": {
-            "entropy_bits": 3.6799219349960586,
-            "purity_global": 0.13810642576186383,
-            "density_coherence_proxy": 0.26401561300078824,
+            "entropy_bits": 3.7419266423504816,
+            "purity_global": 0.1251804088200736,
+            "density_coherence_proxy": 0.2516146715299037,
             "trace_real": 1.000000000000008,
             "trace_imaginary": 0.0,
             "eigenvalue_sum": 1.000000000000008,
@@ -3582,7 +3600,7 @@
             "logical_P_sig": 0.4948611575456062,
             "logical_coherence": 0.7919999999999998,
             "logical_scope": "algorithmic_topological_logical_qubit_simulation",
-            "P_sig_tryperposition": 0.13144983692764692
+            "P_sig_tryperposition": 0.12543173818782594
           },
           "pre_intervention_topology": {
             "graph_P_sig": 0.0,
@@ -3594,15 +3612,15 @@
             "graph_finite_h1": 0,
             "logical_P_sig": 0.4948611575456062,
             "logical_coherence": 0.7919999999999998,
-            "P_sig_tryperposition": 0.13169957806073948
+            "P_sig_tryperposition": 0.12551358496469275
           },
           "tryperposition": {
             "state": "Psi = Q x I x M",
-            "P_sig_tryperposition": 0.13144983692764692,
+            "P_sig_tryperposition": 0.12543173818782594,
             "quantum_layer_Q": {
-              "density_coherence_proxy": 0.2635149617510588,
-              "purity_global": 0.13758522774913515,
-              "entropy_bits": 3.682425191244706
+              "density_coherence_proxy": 0.2514505948693341,
+              "purity_global": 0.12501132454349778,
+              "entropy_bits": 3.7427470256533297
             },
             "information_layer_I": {
               "graph_P_sig": 0.0,
@@ -3621,34 +3639,34 @@
             "phase_amplitude": 4.286263797015736e-16,
             "graph_P_sig": 0.0,
             "logical_P_sig": 0.4948611575456062,
-            "P_sig_tryperposition": 0.13169957806073948,
+            "P_sig_tryperposition": 0.12551358496469275,
             "active_P_sig_channel": "tryperposition",
-            "density_coherence_proxy": 0.26401561300078824,
+            "density_coherence_proxy": 0.2516146715299037,
             "logical_coherence": 0.7919999999999998,
             "lct_factor_graph": -0.0,
             "lct_factor_logical": -1.6799155275965294e-16,
             "candidate_delta_w_graph": -0.0,
             "candidate_delta_w_logical": -1.6799155275965295e-17,
-            "lct_factor_tryperposition": -1.490365847757515e-17,
-            "candidate_delta_w_tryperposition": -1.490365847757515e-18,
-            "eth_modulation": 0.8100671709232293,
-            "lct_factor_coupled": -1.2072964459335305e-17,
-            "candidate_delta_w_coupled": -1.2072964459335303e-18,
+            "lct_factor_tryperposition": -1.3536475180664641e-17,
+            "candidate_delta_w_tryperposition": -1.3536475180664641e-18,
+            "eth_modulation": 0.8489084428359103,
+            "lct_factor_coupled": -1.1491228067104967e-17,
+            "candidate_delta_w_coupled": -1.1491228067104967e-18,
             "coupling_scope": "eth_amplitude_modulation_exp_minus_abs_rate_stabilized"
           },
           "eth": {
             "measurement_state": "pre_intervention_density",
-            "delta_entropy_bits": 0.21063810768819646,
-            "eth_rate_bits_per_step": 0.21063810768819646,
+            "delta_entropy_bits": 0.16380393966874163,
+            "eth_rate_bits_per_step": 0.16380393966874163,
             "gradient_frobenius": 0.4353539569638321,
-            "oscillation_stress": 0.37522877802627297,
+            "oscillation_stress": 0.3808561706496629,
             "graph_tension": null,
-            "graph_tension_unavailable_reason": "reference_psig_is_zero",
-            "logical_tension": 83.25018407489175,
+            "graph_tension_unavailable_reason": "current_psig_is_zero",
+            "logical_tension": 4.224935315385484,
             "logical_tension_unavailable_reason": null,
-            "tryperposition_tension": 303.1239158883763,
+            "tryperposition_tension": 16.141679271291967,
             "tryperposition_tension_unavailable_reason": null,
-            "active_tension": 303.1239158883763,
+            "active_tension": 16.141679271291967,
             "active_tension_channel": "tryperposition",
             "crosstalk_proxy": 0.06281985990000001,
             "crosstalk_scope": "correlation_statistic_not_electromagnetic_measurement",
@@ -3679,7 +3697,7 @@
             "mode": "lct_eth_local_dephasing_experimental",
             "applied": true,
             "channel": "local_z_dephasing",
-            "strength": 0.9967010191291925,
+            "strength": 0.938048577028878,
             "affected_qubits": [
               0,
               1,
@@ -3751,19 +3769,19 @@
           "time_step": 8.0,
           "gate": "ry(0.449; 0)",
           "density": {
-            "entropy_bits": 3.7188273236753835,
-            "purity_global": 0.13273560235591927,
-            "density_coherence_proxy": 0.25623453526492335,
+            "entropy_bits": 3.794686217603403,
+            "purity_global": 0.11973678587117678,
+            "density_coherence_proxy": 0.2410627564793194,
             "trace_real": 1.0000000000000082,
             "trace_imaginary": 0.0,
-            "eigenvalue_sum": 1.0000000000000082,
+            "eigenvalue_sum": 1.000000000000008,
             "negative_eigenvalues": [],
             "rho_dimension": 32
           },
           "pre_intervention_density": {
-            "entropy_bits": 3.71280487431026,
-            "purity_global": 0.13382705054173696,
-            "density_coherence_proxy": 0.25743902513794803,
+            "entropy_bits": 3.7656300065472825,
+            "purity_global": 0.12298861725151372,
+            "density_coherence_proxy": 0.2468739986905435,
             "trace_real": 1.0000000000000082,
             "trace_imaginary": 0.0,
             "eigenvalue_sum": 1.000000000000008,
@@ -3771,7 +3789,7 @@
             "rho_dimension": 32
           },
           "topology": {
-            "graph_P_sig": 0.015558552,
+            "graph_P_sig": 0.015568162,
             "graph_betti": [
               1,
               0,
@@ -3781,7 +3799,7 @@
             "logical_P_sig": 0.6873277768380404,
             "logical_coherence": 0.7879999999999998,
             "logical_scope": "algorithmic_topological_logical_qubit_simulation",
-            "P_sig_tryperposition": 0.1767620882669918
+            "P_sig_tryperposition": 0.16629647926489585
           },
           "pre_intervention_topology": {
             "graph_P_sig": 0.015557929,
@@ -3793,21 +3811,21 @@
             "graph_finite_h1": 1,
             "logical_P_sig": 0.6873277768380404,
             "logical_coherence": 0.7879999999999998,
-            "P_sig_tryperposition": 0.17759296036633823
+            "P_sig_tryperposition": 0.17030473232034626
           },
           "tryperposition": {
             "state": "Psi = Q x I x M",
-            "P_sig_tryperposition": 0.1767620882669918,
+            "P_sig_tryperposition": 0.16629647926489585,
             "quantum_layer_Q": {
-              "density_coherence_proxy": 0.25623453526492335,
-              "purity_global": 0.13273560235591927,
-              "entropy_bits": 3.7188273236753835
+              "density_coherence_proxy": 0.2410627564793194,
+              "purity_global": 0.11973678587117678,
+              "entropy_bits": 3.794686217603403
             },
             "information_layer_I": {
-              "graph_P_sig": 0.015558552,
+              "graph_P_sig": 0.015568162,
               "logical_P_sig": 0.6873277768380404,
-              "correlation_amplitude": 0.0567842373,
-              "information_amplitude": 0.6898449035538368
+              "correlation_amplitude": 0.056810084799999994,
+              "information_amplitude": 0.6898472484660386
             },
             "material_layer_M": {
               "trace_integrity_amplitude": 0.9999999999999918,
@@ -3820,34 +3838,34 @@
             "phase_amplitude": 1.0,
             "graph_P_sig": 0.015557929,
             "logical_P_sig": 0.6873277768380404,
-            "P_sig_tryperposition": 0.17759296036633823,
+            "P_sig_tryperposition": 0.17030473232034626,
             "active_P_sig_channel": "tryperposition",
-            "density_coherence_proxy": 0.25743902513794803,
+            "density_coherence_proxy": 0.2468739986905435,
             "logical_coherence": 0.7879999999999998,
-            "lct_factor_graph": 0.004005218074925411,
+            "lct_factor_graph": 0.003840848143573569,
             "lct_factor_logical": 0.5416142881483756,
-            "candidate_delta_w_graph": 0.00040052180749254113,
+            "candidate_delta_w_graph": 0.0003840848143573569,
             "candidate_delta_w_logical": 0.05416142881483757,
-            "lct_factor_tryperposition": 0.045719358588072356,
-            "candidate_delta_w_tryperposition": 0.004571935858807236,
-            "eth_modulation": 0.9700771417538661,
-            "lct_factor_coupled": 0.0443513047019373,
-            "candidate_delta_w_coupled": 0.004435130470193731,
+            "lct_factor_tryperposition": 0.04204381026384652,
+            "candidate_delta_w_tryperposition": 0.004204381026384653,
+            "eth_modulation": 0.9773768488468205,
+            "lct_factor_coupled": 0.041092646789191924,
+            "candidate_delta_w_coupled": 0.004109264678919193,
             "coupling_scope": "eth_amplitude_modulation_exp_minus_abs_rate_stabilized"
           },
           "eth": {
             "measurement_state": "pre_intervention_density",
-            "delta_entropy_bits": 0.03037968306555383,
-            "eth_rate_bits_per_step": 0.03037968306555383,
+            "delta_entropy_bits": 0.022882980893952798,
+            "eth_rate_bits_per_step": 0.022882980893952798,
             "gradient_frobenius": 0.2650251282785832,
-            "oscillation_stress": 0.22955759704161494,
-            "graph_tension": null,
-            "graph_tension_unavailable_reason": "reference_psig_is_zero",
-            "logical_tension": 36.669096109884904,
+            "oscillation_stress": 0.2324300542146952,
+            "graph_tension": 446.56913893399246,
+            "graph_tension_unavailable_reason": null,
+            "logical_tension": 1.8563968491270064,
             "logical_tension_unavailable_reason": null,
-            "tryperposition_tension": 137.52269373315838,
+            "tryperposition_tension": 7.26012367780188,
             "tryperposition_tension_unavailable_reason": null,
-            "active_tension": 137.52269373315838,
+            "active_tension": 7.26012367780188,
             "active_tension_channel": "tryperposition",
             "crosstalk_proxy": 0.05678256279999999,
             "crosstalk_scope": "correlation_statistic_not_electromagnetic_measurement",
@@ -3878,7 +3896,7 @@
             "mode": "lct_eth_local_dephasing_experimental",
             "applied": true,
             "channel": "local_z_dephasing",
-            "strength": 0.9927284728588843,
+            "strength": 0.8622612996170381,
             "affected_qubits": [
               0,
               1,
@@ -3910,34 +3928,34 @@
           "correlation_matrix": [
             [
               1.0,
-              -0.034664166,
-              -0.069655283,
-              -0.030500427,
-              0.018467271
+              -0.034882239,
+              -0.069831779,
+              -0.0307185,
+              0.018113104
             ],
             [
-              -0.034664166,
+              -0.034882239,
               1.0,
               0.12174805,
               0.017761213,
               -0.060439984
             ],
             [
-              -0.069655283,
+              -0.069831779,
               0.12174805,
               1.0,
               -0.032558141,
               -0.012512067
             ],
             [
-              -0.030500427,
+              -0.0307185,
               0.017761213,
               -0.032558141,
               1.0,
               0.169535771
             ],
             [
-              0.018467271,
+              0.018113104,
               -0.060439984,
               -0.012512067,
               0.169535771,
@@ -3950,27 +3968,27 @@
           "time_step": 9.0,
           "gate": "rz(0.349; 3)",
           "density": {
-            "entropy_bits": 3.7415916203248325,
-            "purity_global": 0.12990754818845787,
-            "density_coherence_proxy": 0.25168167593503354,
+            "entropy_bits": 3.8203656715271284,
+            "purity_global": 0.11754234761076521,
+            "density_coherence_proxy": 0.23592686569457433,
             "trace_real": 1.0000000000000082,
             "trace_imaginary": 0.0,
-            "eigenvalue_sum": 1.0000000000000082,
+            "eigenvalue_sum": 1.000000000000008,
             "negative_eigenvalues": [],
             "rho_dimension": 32
           },
           "pre_intervention_density": {
-            "entropy_bits": 3.7367919971365544,
-            "purity_global": 0.13075039802353164,
-            "density_coherence_proxy": 0.25264160057268914,
+            "entropy_bits": 3.806678633040093,
+            "purity_global": 0.11908027461743198,
+            "density_coherence_proxy": 0.23866427339198137,
             "trace_real": 1.0000000000000082,
             "trace_imaginary": 0.0,
-            "eigenvalue_sum": 1.0000000000000082,
+            "eigenvalue_sum": 1.000000000000008,
             "negative_eigenvalues": [],
             "rho_dimension": 32
           },
           "topology": {
-            "graph_P_sig": 0.004801611,
+            "graph_P_sig": 0.004819067,
             "graph_betti": [
               1,
               0,
@@ -3980,10 +3998,10 @@
             "logical_P_sig": 0.6507838259419076,
             "logical_coherence": 0.7839999999999998,
             "logical_scope": "algorithmic_topological_logical_qubit_simulation",
-            "P_sig_tryperposition": 0.16448947612260353
+            "P_sig_tryperposition": 0.15419328510798924
           },
           "pre_intervention_topology": {
-            "graph_P_sig": 0.004800909,
+            "graph_P_sig": 0.004812862,
             "graph_betti": [
               1,
               0,
@@ -3992,21 +4010,21 @@
             "graph_finite_h1": 1,
             "logical_P_sig": 0.6507838259419076,
             "logical_coherence": 0.7839999999999998,
-            "P_sig_tryperposition": 0.16511682241613962
+            "P_sig_tryperposition": 0.15598215904402626
           },
           "tryperposition": {
             "state": "Psi = Q x I x M",
-            "P_sig_tryperposition": 0.16448947612260353,
+            "P_sig_tryperposition": 0.15419328510798924,
             "quantum_layer_Q": {
-              "density_coherence_proxy": 0.25168167593503354,
-              "purity_global": 0.12990754818845787,
-              "entropy_bits": 3.7415916203248325
+              "density_coherence_proxy": 0.23592686569457433,
+              "purity_global": 0.11754234761076521,
+              "entropy_bits": 3.8203656715271284
             },
             "information_layer_I": {
-              "graph_P_sig": 0.004801611,
+              "graph_P_sig": 0.004819067,
               "logical_P_sig": 0.6507838259419076,
-              "correlation_amplitude": 0.06000089529999999,
-              "information_amplitude": 0.6535615893032454
+              "correlation_amplitude": 0.06002478279999999,
+              "information_amplitude": 0.6535639112317362
             },
             "material_layer_M": {
               "trace_integrity_amplitude": 0.9999999999999918,
@@ -4017,40 +4035,40 @@
             "measurement_state": "pre_intervention_density",
             "phase_signed": 5.51091059616309e-16,
             "phase_amplitude": 5.51091059616309e-16,
-            "graph_P_sig": 0.004800909,
+            "graph_P_sig": 0.004812862,
             "logical_P_sig": 0.6507838259419076,
-            "P_sig_tryperposition": 0.16511682241613962,
+            "P_sig_tryperposition": 0.15598215904402626,
             "active_P_sig_channel": "tryperposition",
-            "density_coherence_proxy": 0.25264160057268914,
+            "density_coherence_proxy": 0.23866427339198137,
             "logical_coherence": 0.7839999999999998,
-            "lct_factor_graph": 6.684234900726377e-19,
+            "lct_factor_graph": 6.33015271279469e-19,
             "lct_factor_logical": 2.811746602040734e-16,
-            "candidate_delta_w_graph": 6.684234900726377e-20,
+            "candidate_delta_w_graph": 6.330152712794689e-20,
             "candidate_delta_w_logical": 2.8117466020407335e-17,
-            "lct_factor_tryperposition": 2.2988972027818063e-17,
-            "candidate_delta_w_tryperposition": 2.2988972027818064e-18,
-            "eth_modulation": 0.982195729321005,
-            "lct_factor_coupled": 2.2579670147202945e-17,
-            "candidate_delta_w_coupled": 2.2579670147202945e-18,
+            "lct_factor_tryperposition": 2.05156700362511e-17,
+            "candidate_delta_w_tryperposition": 2.05156700362511e-18,
+            "eth_modulation": 0.9880792069828112,
+            "lct_factor_coupled": 2.027110698014001e-17,
+            "candidate_delta_w_coupled": 2.0271106980140008e-18,
             "coupling_scope": "eth_amplitude_modulation_exp_minus_abs_rate_stabilized"
           },
           "eth": {
             "measurement_state": "pre_intervention_density",
-            "delta_entropy_bits": 0.01796467346117092,
-            "eth_rate_bits_per_step": 0.01796467346117092,
-            "gradient_frobenius": 0.2632864312683541,
-            "oscillation_stress": 0.2288616255858216,
-            "graph_tension": null,
-            "graph_tension_unavailable_reason": "reference_psig_is_zero",
-            "logical_tension": 38.61078733538897,
+            "delta_entropy_bits": 0.011992415436690163,
+            "eth_rate_bits_per_step": 0.011992415436690163,
+            "gradient_frobenius": 0.2632841533808077,
+            "oscillation_stress": 0.23193220409380302,
+            "graph_tension": 1440.475428782317,
+            "graph_tension_unavailable_reason": null,
+            "logical_tension": 1.9564409248539054,
             "logical_tension_unavailable_reason": null,
-            "tryperposition_tension": 147.46538987271964,
+            "tryperposition_tension": 7.909783188187917,
             "tryperposition_tension_unavailable_reason": null,
-            "active_tension": 147.46538987271964,
+            "active_tension": 7.909783188187917,
             "active_tension_channel": "tryperposition",
-            "crosstalk_proxy": 0.059999934899999996,
+            "crosstalk_proxy": 0.06001629509999999,
             "crosstalk_scope": "correlation_statistic_not_electromagnetic_measurement",
-            "eth_pressure_indicator": 0.00022702499780287498,
+            "eth_pressure_indicator": 0.00022702554995962502,
             "temperature_role": "profile_metadata_only_not_converted_to_aer_t1_t2",
             "collapse_condition_met": true,
             "collapse_threshold": 1.0,
@@ -4058,11 +4076,11 @@
           },
           "impact": {
             "per_qubit": [
-              0.272388378,
+              0.272374309,
               0.253420925,
               0.17043928700000002,
-              0.127328322,
-              0.102963948
+              0.127314252,
+              0.102963949
             ],
             "impact_threshold": 0.0,
             "eligible_qubits": [
@@ -4077,7 +4095,7 @@
             "mode": "lct_eth_local_dephasing_experimental",
             "applied": true,
             "channel": "local_z_dephasing",
-            "strength": 0.9932187477965975,
+            "strength": 0.8735742843756639,
             "affected_qubits": [
               0,
               1,
@@ -4109,34 +4127,34 @@
           "correlation_matrix": [
             [
               1.0,
-              0.104652266,
-              0.014116809,
-              -0.051833942,
-              -0.009508672
+              0.104333845,
+              0.013859085,
+              -0.052131824,
+              -0.01002581
             ],
             [
-              0.104652266,
+              0.104333845,
               1.0,
               0.17056952,
               -0.021558614,
               -0.034489588
             ],
             [
-              0.014116809,
+              0.013859085,
               0.17056952,
               1.0,
               -0.060290102,
               -0.002408662
             ],
             [
-              -0.051833942,
+              -0.052131824,
               -0.021558614,
               -0.060290102,
               1.0,
               0.130580778
             ],
             [
-              -0.009508672,
+              -0.01002581,
               -0.034489588,
               -0.002408662,
               0.130580778,
@@ -4149,22 +4167,22 @@
           "time_step": 10.0,
           "gate": "cx(2,4)",
           "density": {
-            "entropy_bits": 3.930973844302331,
-            "purity_global": 0.11714906654199475,
-            "density_coherence_proxy": 0.21380523113953376,
-            "trace_real": 1.00000000000001,
+            "entropy_bits": 3.9885649680967443,
+            "purity_global": 0.10880827138006137,
+            "density_coherence_proxy": 0.2022870063806511,
+            "trace_real": 1.0000000000000098,
             "trace_imaginary": 0.0,
             "eigenvalue_sum": 1.0000000000000098,
             "negative_eigenvalues": [],
             "rho_dimension": 32
           },
           "pre_intervention_density": {
-            "entropy_bits": 3.929678748897696,
-            "purity_global": 0.11735658220514224,
-            "density_coherence_proxy": 0.21406425022046083,
-            "trace_real": 1.00000000000001,
+            "entropy_bits": 3.9856762917438897,
+            "purity_global": 0.10915471562954682,
+            "density_coherence_proxy": 0.20286474165122204,
+            "trace_real": 1.0000000000000098,
             "trace_imaginary": 0.0,
-            "eigenvalue_sum": 1.00000000000001,
+            "eigenvalue_sum": 1.0000000000000098,
             "negative_eigenvalues": [],
             "rho_dimension": 32
           },
@@ -4179,7 +4197,7 @@
             "logical_P_sig": 0.5893783933763012,
             "logical_coherence": 0.7439999999999998,
             "logical_scope": "algorithmic_topological_logical_qubit_simulation",
-            "P_sig_tryperposition": 0.12694333945242486
+            "P_sig_tryperposition": 0.12008117978704089
           },
           "pre_intervention_topology": {
             "graph_P_sig": 0.0,
@@ -4191,24 +4209,24 @@
             "graph_finite_h1": 0,
             "logical_P_sig": 0.5893783933763012,
             "logical_coherence": 0.7439999999999998,
-            "P_sig_tryperposition": 0.12709750579739687
+            "P_sig_tryperposition": 0.12042609235270223
           },
           "tryperposition": {
             "state": "Psi = Q x I x M",
-            "P_sig_tryperposition": 0.12694333945242486,
+            "P_sig_tryperposition": 0.12008117978704089,
             "quantum_layer_Q": {
-              "density_coherence_proxy": 0.21380523113953376,
-              "purity_global": 0.11714906654199475,
-              "entropy_bits": 3.930973844302331
+              "density_coherence_proxy": 0.2022870063806511,
+              "purity_global": 0.10880827138006137,
+              "entropy_bits": 3.9885649680967443
             },
             "information_layer_I": {
               "graph_P_sig": 0.0,
               "logical_P_sig": 0.5893783933763012,
-              "correlation_amplitude": 0.07178189830000001,
-              "information_amplitude": 0.5937335526163074
+              "correlation_amplitude": 0.0708185912,
+              "information_amplitude": 0.5936178597703936
             },
             "material_layer_M": {
-              "trace_integrity_amplitude": 0.99999999999999,
+              "trace_integrity_amplitude": 0.9999999999999902,
               "scope": "density_trace_integrity_proxy_not_cryptographic_proof"
             }
           },
@@ -4218,38 +4236,38 @@
             "phase_amplitude": 1.0,
             "graph_P_sig": 0.0,
             "logical_P_sig": 0.5893783933763012,
-            "P_sig_tryperposition": 0.12709750579739687,
+            "P_sig_tryperposition": 0.12042609235270223,
             "active_P_sig_channel": "tryperposition",
-            "density_coherence_proxy": 0.21406425022046083,
+            "density_coherence_proxy": 0.20286474165122204,
             "logical_coherence": 0.7439999999999998,
             "lct_factor_graph": -0.0,
             "lct_factor_logical": -0.43849752467196795,
             "candidate_delta_w_graph": -0.0,
             "candidate_delta_w_logical": -0.043849752467196794,
-            "lct_factor_tryperposition": -0.027207032283410433,
-            "candidate_delta_w_tryperposition": -0.0027207032283410437,
-            "eth_modulation": 0.8285425143608625,
-            "lct_factor_coupled": -0.022542182936394036,
-            "candidate_delta_w_coupled": -0.002254218293639404,
+            "lct_factor_tryperposition": -0.024430208113197144,
+            "candidate_delta_w_tryperposition": -0.0024430208113197143,
+            "eth_modulation": 0.8476303720620042,
+            "lct_factor_coupled": -0.020707786392541488,
+            "candidate_delta_w_coupled": -0.002070778639254149,
             "coupling_scope": "eth_amplitude_modulation_exp_minus_abs_rate_stabilized"
           },
           "eth": {
             "measurement_state": "pre_intervention_density",
-            "delta_entropy_bits": 0.18808712857286336,
-            "eth_rate_bits_per_step": 0.18808712857286336,
-            "gradient_frobenius": 0.4831500543012266,
-            "oscillation_stress": 0.42644921523620577,
+            "delta_entropy_bits": 0.16531062021676135,
+            "eth_rate_bits_per_step": 0.16531062021676135,
+            "gradient_frobenius": 0.4769645321519117,
+            "oscillation_stress": 0.4249016042794899,
             "graph_tension": null,
-            "graph_tension_unavailable_reason": "reference_psig_is_zero",
-            "logical_tension": 79.44115304376454,
+            "graph_tension_unavailable_reason": "current_psig_is_zero",
+            "logical_tension": 3.957642805768992,
             "logical_tension_unavailable_reason": null,
-            "tryperposition_tension": 356.9757698741337,
+            "tryperposition_tension": 18.76922013841198,
             "tryperposition_tension_unavailable_reason": null,
-            "active_tension": 356.9757698741337,
+            "active_tension": 18.76922013841198,
             "active_tension_channel": "tryperposition",
-            "crosstalk_proxy": 0.07179650359999999,
+            "crosstalk_proxy": 0.07089947329999999,
             "crosstalk_scope": "correlation_statistic_not_electromagnetic_measurement",
-            "eth_pressure_indicator": 0.0002274231319965,
+            "eth_pressure_indicator": 0.000227392857223875,
             "temperature_role": "profile_metadata_only_not_converted_to_aer_t1_t2",
             "collapse_condition_met": true,
             "collapse_threshold": 1.0,
@@ -4257,11 +4275,11 @@
           },
           "impact": {
             "per_qubit": [
-              0.43185542,
-              0.261361066,
-              0.281802439,
+              0.42376083600000003,
+              0.26136106699999995,
+              0.281755384,
               0.464942807,
-              0.487147434
+              0.479099904
             ],
             "impact_threshold": 0.0,
             "eligible_qubits": [
@@ -4276,7 +4294,7 @@
             "mode": "lct_eth_local_dephasing_experimental",
             "applied": true,
             "channel": "local_z_dephasing",
-            "strength": 0.997198689422667,
+            "strength": 0.9467212812985523,
             "affected_qubits": [
               0,
               1,
@@ -4308,34 +4326,34 @@
           "correlation_matrix": [
             [
               1.0,
-              0.004226355,
-              -0.030184448,
-              0.047041458,
-              0.178608459
+              0.003884273,
+              -0.030410776,
+              0.046721441,
+              0.169411159
             ],
             [
-              0.004226355,
+              0.003884273,
               1.0,
               0.209435857,
               0.0577553,
               0.008270482
             ],
             [
-              -0.030184448,
+              -0.030410776,
               0.209435857,
               1.0,
               0.054337978,
               -0.086418844
             ],
             [
-              0.047041458,
+              0.046721441,
               0.0577553,
               0.054337978,
               1.0,
               -0.041539802
             ],
             [
-              0.178608459,
+              0.169411159,
               0.008270482,
               -0.086418844,
               -0.041539802,
