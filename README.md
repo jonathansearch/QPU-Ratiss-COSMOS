@@ -137,13 +137,13 @@ The incubator links a five-qubit Aer trajectory to the computed von Neumann entr
 | Tests | pytest | Data contracts and reproducibility |
 | Artifacts | Versioned JSON | `ratiss.cosmos.run.v1`, `ratiss.cosmos.incubator.v1` |
 
-The source topological engine ([`ratiss-topological-decoherence-engine`](https://github.com/evinajonathan13-max/ratiss-topological-decoherence-engine)) is an **explicit local-path** dependency — provenance stays visible, no divergent implementation is hidden inside COSMOS.
+The source topological engine ([`ratiss-topological-decoherence-engine`](https://github.com/jonathansearch/ratiss-topological-decoherence-engine)) is an **explicit local-path** dependency — provenance stays visible, no divergent implementation is hidden inside COSMOS.
 
 ## 7. Quick start and reproduction
 
 ```bash
-git clone https://github.com/evinajonathan13-max/QPU-Ratiss-COSMOS.git
-git clone https://github.com/evinajonathan13-max/ratiss-topological-decoherence-engine.git
+git clone https://github.com/jonathansearch/QPU-Ratiss-COSMOS.git
+git clone https://github.com/jonathansearch/ratiss-topological-decoherence-engine.git
 cd QPU-Ratiss-COSMOS
 python3 -m pip install -e .
 
@@ -233,7 +233,7 @@ Distributed under the [MIT License](LICENSE) — © 2026 Jonathan Evina.
   title   = {QPU-Ratiss-COSMOS: Local QPU Simulation Laboratory
              with RATISS Topological Instrumentation},
   year    = {2026},
-  url     = {https://github.com/evinajonathan13-max/QPU-Ratiss-COSMOS},
+  url     = {https://github.com/jonathansearch/QPU-Ratiss-COSMOS},
   note    = {Reproducible software simulation; no hardware execution.}
 }
 ```
